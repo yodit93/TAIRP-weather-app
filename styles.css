@@ -15,6 +15,10 @@ p {
     padding: 0;
 }
 
+a, a:active {
+    color: inherit;
+}
+
 main {
     background-color: #08a0be;
     height: 100vh;
@@ -55,6 +59,10 @@ main {
 
 .container.weather {
     height: auto;
+}
+
+.back {
+    margin-right: 1rem;
 }
 
 .image-container {
