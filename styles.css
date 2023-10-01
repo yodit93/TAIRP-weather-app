@@ -15,7 +15,7 @@ p {
     padding: 0;
 }
 
-a, a:active {
+a {
     color: inherit;
 }
 
@@ -26,7 +26,6 @@ main {
 
 .container {
     width: 90%;
-    height: 48%;
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
 }
@@ -34,14 +33,6 @@ main {
 .h4 {
     color: #08a0be;
     font-weight: 700;
-}
-
-.line {
-    background-color: gray;
-    position: fixed;
-    top: 35%;
-    left: 8%;
-    right: 8%;
 }
 
 .form { 
@@ -55,6 +46,13 @@ main {
     width: 100%;
     background-color: #08a0be;
     color: white;
+    margin-bottom: 2rem;
+    transition: 1s ease-in-out;
+}
+
+.btn:hover {
+    background-color: #077389;
+    color: white;
 }
 
 .container.weather {
@@ -63,25 +61,30 @@ main {
 
 .back {
     margin-right: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.back:hover {
+    color: #119fbc;
 }
 
 .image-container {
     margin: auto;
-    width: 100px;
-    height: 100px;
+    width: 150px;
 }
 
 .image-container .weather-icon {
     width: 100%;
-    height: 100%;
 }
 
 .temperature, .description {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .location {
     text-align: center;
+    margin-bottom: 1rem;
 }
 
 .aditional-info {
@@ -104,15 +107,18 @@ main {
    
 }
 
-.humidity {
-   
-}
-
 .feels-like img {
     height: 30px;
 }
 
 .humidity-icon {
     width: 30px;
+}
+
+@media screen and (min-width: 768px) {
+    .container {
+        width: 50%;
+        max-width: 500px;
+    }
 }
 
