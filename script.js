@@ -1,3 +1,4 @@
+const container = document.querySelector('.weather');
 const inputValue = JSON.parse(localStorage.getItem('inputValue'));
 const icon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
@@ -35,6 +36,7 @@ const setIcon = (temp1, temp2) => {
 }
 
 fetchWeather().then((data) => {
+    container.style.display = 'block';
     const iconId = data.weather[0].icon;
     const temp = data.main.temp;
     const feels = data.main.feels_like;
