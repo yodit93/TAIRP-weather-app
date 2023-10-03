@@ -10,36 +10,35 @@
 </head>
 <body>
     <main class="container-fluid d-flex justify-content-center align-items-center">
-        <div class="container bg-light weather">
+        <div class="container weather">
             <h1 class="h4 text-info mt-3"><a href="./index.html"><i class="fa-solid fa-arrow-left back"></i></a>Weather App</h1>
             <hr>
             <div class="image-container">
-                <img class="weather-icon" src="./images/mist.png" alt="weather icon">
+                <img class="weather-icon" alt="weather icon">
             </div>
-            <h2 class="temperature">13&deg;C</h2>
-            <p class="description">Broken clouds</p>
+            <h2 class="temperature"></h2>
+            <p class="description"></p>
             <div class="location">
-                <p>Kampala</p>
+                <p class="city"></p>
             </div>
             <div class="aditional-info">
                 <div class="feels-like grid-item">
-                    <img src="./images/temperature-max.svg" alt="temperature max icon">
-                    <!-- <img src="./images/temperature-frigid.svg" alt="temperature frigid icon"> -->
+                    <img class="feels-icon">
                     <div>
-                        <p>17&deg;C</p>
+                        <p class="feels-temp"></p>
                         <p>Feels like</p>
                     </div>
                 </div>
                 <div class="humidity grid-item">
                     <img class="humidity-icon" src="./images/humidity.svg" alt="">
                     <div>
-                        <p>86&percnt;</p>
+                        <p class="humid-percent"></p>
                         <p>Humidity</p>
                     </div>
                 </div>
             </div>   
         </div>
     </main>
-    <script src="./index.js"></script>
+    <script src="./script.js"></script>
 </body>
 </html>
