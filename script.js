@@ -25,7 +25,10 @@ const sentenceCase = (str) => {
 }
 
 const setIcon = (temp1, temp2) => {
-    if(temp1 < temp2) {
+    if(temp1 === temp2) {
+        feelsIcon.src = "./images/sign-equal.svg";
+    }
+    else if(temp1 < temp2) {
         feelsIcon.src = "./images/temperature-max.svg";
         feelsIcon.alt = "temperature max icon"
     }

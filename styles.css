@@ -69,6 +69,10 @@ main {
     color: white;
 }
 
+a:hover {
+    color: #077389;
+}
+
 .container.weather {
     height: auto;
     display: none;
