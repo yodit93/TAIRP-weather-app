@@ -9,14 +9,15 @@
 </head>
 <body>
     <main class="container-fluid d-flex justify-content-center align-items-center">
-        <div class="container bg-light">
+        <div class="container">
             <h1 class="h4 text-info mt-3">Weather App</h1>
             <hr>
             <form class="form">
-                <div>
-                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter city name">
+                <div class="input-cont">
+                    <span class="error"></span>
+                    <input type="text" class="form-control" id="city" name="city" placeholder="Enter city name" required>
                 </div>
-                <a href="./weather.html" class="btn">Get Data</a>
+                <a href="./weather.html" class="btn get-data">Get Data</a>
             </form>
         </div>
     </main>
