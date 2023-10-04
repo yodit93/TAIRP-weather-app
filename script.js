@@ -1,5 +1,5 @@
 const container = document.querySelector('.weather');
-const inputValue = JSON.parse(localStorage.getItem('inputValue'));
+const inputValue = JSON.parse(localStorage.getItem('city'));
 const icon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const description = document.querySelector('.description');
@@ -51,4 +51,3 @@ fetchWeather().then((data) => {
     feelsTemp.textContent = feels + "\u2103";
     humidity.textContent = data.main.humidity + "%";
 })
-
