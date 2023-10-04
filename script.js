@@ -7,6 +7,7 @@ const city = document.querySelector('.city');
 const feelsTemp = document.querySelector('.feels-temp');
 const humidity = document.querySelector('.humid-percent');
 const feelsIcon = document.querySelector('.feels-icon');
+const dataCont = document.querySelector('.data-cont');
 
 const fetchWeather = async () => {
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=103faa6bbea590dc1eab8cd4dbc99996&units=metric`;
@@ -50,4 +51,7 @@ fetchWeather().then((data) => {
     setIcon(temp, feels);
     feelsTemp.textContent = feels + "\u2103";
     humidity.textContent = data.main.humidity + "%";
+}).catch(() => {
+    container.style.display = 'block';
+    dataCont.innerHTML = '<span>City not found. Please use correct city name.</span>'
 })
