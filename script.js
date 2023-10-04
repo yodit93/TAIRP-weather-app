@@ -10,48 +10,45 @@ const feelsIcon = document.querySelector('.feels-icon');
 const dataCont = document.querySelector('.data-cont');
 
 const fetchWeather = async () => {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=103faa6bbea590dc1eab8cd4dbc99996&units=metric`;
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    return data;
-}
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${inputValue}&appid=103faa6bbea590dc1eab8cd4dbc99996&units=metric`;
+  const response = await fetch(url);
+  const data = await response.json();
+  return data;
+};
 
 const sentenceCase = (str) => {
-    const arr = str.split(' ');
-    for(let i = 0; i < arr.length; i++) {
-        arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase();
-    }
-    return arr.join(" ");
-}
+  const arr = str.split(' ');
+  for (let i = 0; i < arr.length; i += 1) {
+    arr[i] = arr[i][0].toUpperCase() + arr[i].slice(1).toLowerCase();
+  }
+  return arr.join(' ');
+};
 
 const setIcon = (temp1, temp2) => {
-    if(temp1 === temp2) {
-        feelsIcon.src = "./images/sign-equal.svg";
-    }
-    else if(temp1 < temp2) {
-        feelsIcon.src = "./images/temperature-max.svg";
-        feelsIcon.alt = "temperature max icon"
-    }
-    else {
-        feelsIcon.src = "./images/temperature-frigid.svg";
-        feelsIcon.alt = "temperature min icon"
-    }
-}
+  if (temp1 === temp2) {
+    feelsIcon.src = './images/sign-equal.svg';
+  } else if (temp1 < temp2) {
+    feelsIcon.src = './images/temperature-max.svg';
+    feelsIcon.alt = 'temperature max icon';
+  } else {
+    feelsIcon.src = './images/temperature-frigid.svg';
+    feelsIcon.alt = 'temperature min icon';
+  }
+};
 
 fetchWeather().then((data) => {
-    container.style.display = 'block';
-    const iconId = data.weather[0].icon;
-    const temp = data.main.temp;
-    const feels = data.main.feels_like;
-    icon.src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
-    temperature.textContent = temp + "\u2103";
-    description.textContent = sentenceCase(data.weather[0].description.toUpperCase());
-    city.textContent = sentenceCase(inputValue);
-    setIcon(temp, feels);
-    feelsTemp.textContent = feels + "\u2103";
-    humidity.textContent = data.main.humidity + "%";
+  container.style.display = 'block';
+  const iconId = data.weather[0].icon;
+  const { temp } = data.main;
+  const feels = data.main.feels_like;
+  icon.src = `https://openweathermap.org/img/wn/${iconId}@2x.png`;
+  temperature.textContent = `${temp}\u2103`;
+  description.textContent = sentenceCase(data.weather[0].description.toUpperCase());
+  city.textContent = sentenceCase(inputValue);
+  setIcon(temp, feels);
+  feelsTemp.textContent = `${feels}\u2103`;
+  humidity.textContent = `${data.main.humidity}%`;
 }).catch(() => {
-    container.style.display = 'block';
-    dataCont.innerHTML = '<span>City not found. Please use correct city name.</span>'
-})
+  container.style.display = 'block';
+  dataCont.innerHTML = '<span>City not found. Please use correct city name.</span>';
+});
